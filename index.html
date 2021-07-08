@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Karla"
+    />
+
+    <title>Frontend Mentor | Single Price Grid Component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+      :root {
+        --cyan: hsl(179, 62%, 43%);
+        --brightYellow: hsl(71, 73%, 54%);
+        --lightGray: hsl(204, 43%, 93%);
+        --grayishBlue: hsl(218, 22%, 67%);
+        --appSpacer: 25px;
+        --appFont: 16px;
+        --borderRadius: 6px;
+      }
+      body {
+        background-color: var(--lightGray);
+        font-size: var(--appFont);
+        padding: 30px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Karla", serif;
+        color: var(--lightGray);
+        display: flex;
+      }
+      h2 {
+        margin-top: 0px;
+      }
+      article {
+        max-width: 790px;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 1px #c7cec7;
+      }
+      header {
+        background-color: white;
+        padding: var(--appSpacer);
+        color: var(--grayishBlue);
+        border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+      }
+      header h2 {
+        color: var(--cyan);
+      }
+      header h3 {
+        color: var(--brightYellow);
+      }
+      header p {
+        line-height: 2;
+      }
+      section:nth-child(1) {
+        background-color: var(--cyan);
+        padding: var(--appSpacer);
+      }
+      .price {
+        font-size: 40px;
+        align-items: center;
+        display: flex;
+      }
+      .price span {
+        font-size: var(--appFont);
+        margin-left: 10px;
+        color: hsla(204, 43%, 93%, 0.8);
+      }
+      button {
+        background-color: var(--brightYellow);
+        border: none;
+        border-radius: var(--borderRadius);
+        color: white;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: 1px 1px 10px 0px #19a51d;
+      }
+      section:nth-child(2) {
+        background-color: var(--cyan);
+        opacity: 0.7;
+        padding: var(--appSpacer);
+        border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+      }
+
+      ul {
+        padding: 0;
+        list-style-type: none;
+        line-height: 1.5;
+        color: hsla(204, 43%, 93%, 0.8);
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: 700px) {
+        :root {
+          --appSpacer: 40px;
+        }
+
+        .bottom-cards {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        section:nth-child(1) {
+          border-bottom-left-radius: var(--borderRadius);
+        }
+
+        section:nth-child(2) {
+          border-radius: 0 0 var(--borderRadius) 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h2>Join our community</h2>
+        <h3>30-day, hassle-free money back guarantee</h3>
+        <p>
+          Gain access to our full library of tutorials along with expert code
+          reviews. Perfect for any developers who are serious about honing their
+          skills.
+        </p>
+      </header>
+      <div class="bottom-cards">
+        <section>
+          <h2>Monthly Subscription</h2>
+          <div class="price">$29 <span>per month</span></div>
+          <p>Full access for less than $1 a day</p>
+          <button><h3>Sign Up</h3></button>
+        </section>
+        <section>
+          <h2>Why Us</h2>
+          <ul>
+            <li>Tutorials by Industry experts</li>
+            <li>Peer & expert code review</li>
+            <li>Coding exercises</li>
+            <li>Access to our GitHub repos</li>
+            <li>Community forum</li>
+            <li>Flashcard decks</li>
+            <li>New videos every week</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </body>
+</html>
