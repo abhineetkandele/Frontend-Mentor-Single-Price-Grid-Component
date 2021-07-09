@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -15,63 +13,64 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Karla"
     />
-
     <title>Frontend Mentor | Single Price Grid Component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      html, body {
+      html,
+      body {
         height: 100%;
         width: 100%;
       }
       :root {
-        --cyan: hsl(179, 62%, 43%);
-        --brightYellow: hsl(71, 73%, 54%);
-        --lightGray: hsl(204, 43%, 93%);
-        --grayishBlue: hsl(218, 22%, 67%);
+        --colorPrimary: hsl(179, 62%, 43%);
+        --colorSecondary: hsl(71, 73%, 54%);
+        --colorBackground: hsl(204, 43%, 93%);
+        --colorHeaderText: hsl(218, 22%, 67%);
         --appSpacer: 25px;
         --appFont: 16px;
         --borderRadius: 6px;
       }
       body {
-        background-color: var(--lightGray);
+        background-color: var(--colorBackground);
         font-size: var(--appFont);
         padding: 30px;
         margin: 0px;
         box-sizing: border-box;
         font-family: "Karla", serif;
-        color: var(--lightGray);
+        color: var(--colorBackground);
         display: flex;
       }
-      h2 {
+      h1, h2 {
         margin-top: 0px;
       }
-      article {
+      .card {
         max-width: 790px;
         display: grid;
+        grid-template-areas: "header" "section1" "section2";
         grid-template-columns: 1fr;
         margin: auto;
         border-radius: 10px;
         box-shadow: 1px 1px 10px 1px #c7cec7;
       }
-      header {
+      .header {
         background-color: white;
         padding: var(--appSpacer);
-        color: var(--grayishBlue);
+        color: var(--colorHeaderText);
         border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+        grid-area: header;
       }
-      header h2 {
-        color: var(--cyan);
+      .header h1 {
+        color: var(--colorPrimary);
       }
-      header h3 {
-        color: var(--brightYellow);
+      .header h2 {
+        color: var(--colorSecondary);
       }
-      header p {
+      .header p {
         line-height: 2;
       }
-      section:nth-child(1) {
-        background-color: var(--cyan);
+      .section1 {
+        background-color: var(--colorPrimary);
         padding: var(--appSpacer);
+        grid-area: section1;
       }
       .price {
         font-size: 40px;
@@ -84,19 +83,22 @@
         color: hsla(204, 43%, 93%, 0.8);
       }
       button {
-        background-color: var(--brightYellow);
+        background-color: var(--colorSecondary);
         border: none;
         border-radius: var(--borderRadius);
         color: white;
         width: 100%;
         margin-top: 20px;
         box-shadow: 1px 1px 10px 0px #19a51d;
+        font-size: 16px;
+        padding: 15px;
       }
-      section:nth-child(2) {
-        background-color: var(--cyan);
+      .section2 {
+        background-color: var(--colorPrimary);
         opacity: 0.7;
         padding: var(--appSpacer);
         border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+        grid-area: section2;
       }
 
       ul {
@@ -112,53 +114,52 @@
           --appSpacer: 40px;
         }
 
-        .bottom-cards {
+        .card {
           display: grid;
           grid-auto-flow: column;
           grid-template-columns: 1fr 1fr;
+          grid-template-areas: "header header" "section1 section2";
         }
 
-        section:nth-child(1) {
+        .section1 {
           border-bottom-left-radius: var(--borderRadius);
         }
 
-        section:nth-child(2) {
+        .section2 {
           border-radius: 0 0 var(--borderRadius) 0;
         }
       }
     </style>
   </head>
   <body>
-    <article>
-      <header>
-        <h2>Join our community</h2>
-        <h3>30-day, hassle-free money back guarantee</h3>
+    <main role="main" class="card">
+      <header role="banner" class="header">
+        <h1>Join our community</h1>
+        <h2>30-day, hassle-free money back guarantee</h2>
         <p>
           Gain access to our full library of tutorials along with expert code
           reviews. Perfect for any developers who are serious about honing their
           skills.
         </p>
       </header>
-      <div class="bottom-cards">
-        <section>
-          <h2>Monthly Subscription</h2>
-          <div class="price">$29 <span>per month</span></div>
-          <p>Full access for less than $1 a day</p>
-          <button><h3>Sign Up</h3></button>
-        </section>
-        <section>
-          <h2>Why Us</h2>
-          <ul>
-            <li>Tutorials by Industry experts</li>
-            <li>Peer & expert code review</li>
-            <li>Coding exercises</li>
-            <li>Access to our GitHub repos</li>
-            <li>Community forum</li>
-            <li>Flashcard decks</li>
-            <li>New videos every week</li>
-          </ul>
-        </section>
-      </div>
-    </article>
+      <section class="section1">
+        <h2>Monthly Subscription</h2>
+        <div class="price">$29 <span>per month</span></div>
+        <p>Full access for less than $1 a day</p>
+        <button>Sign Up</button>
+      </section>
+      <section class="section2">
+        <h2>Why Us</h2>
+        <ul>
+          <li>Tutorials by Industry experts</li>
+          <li>Peer & expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
